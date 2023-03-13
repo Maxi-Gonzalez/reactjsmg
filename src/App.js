@@ -5,8 +5,8 @@ import Productos from "./Components/Productos/Productos.jsx";
 import ItemCount from "./Components/ItemCount/ItemCount.jsx";
 
 function App() {
-  const onAdd = () => {
-    console.log("Se ejecuto onAdd");
+  const onAdd = (cantidad) => {
+    console.log("se agrego " + cantidad + " elementos al carrito");
   }
 let stock =5
 let initial= 1
