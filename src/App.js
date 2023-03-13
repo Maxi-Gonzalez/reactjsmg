@@ -2,14 +2,24 @@ import Footer from "./Components/Footer/Footer.jsx";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Productos from "./Components/Productos/Productos.jsx";
+import ItemCount from "./Components/ItemCount/ItemCount.jsx";
 
 function App() {
+  const onAdd = () => {
+    console.log("Se ejecuto onAdd");
+  }
+let stock =5
+let initial= 1
+
   return (
     <div>
-      <Navbar />
-      <ItemListContainer greeting={"Hola"} />
-      <Productos />
-      <Footer />
+      <Navbar>
+          <Footer>
+          <ItemListContainer greeting={"Hola"} />
+          <Productos title={"producto 1"} price={0} isGreen={true} />
+          <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
+          </Footer>
+      </Navbar>
     </div>
   );
 }

@@ -1,7 +1,10 @@
+const Footer = ( {children} ) => {
 
-const Footer = () => {
   return (
-    <div>Footer</div>
+    <div>
+      {children}
+      <h1>Footer</h1>
+    </div>
   )
 }
 
