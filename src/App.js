@@ -17,7 +17,7 @@ let initial= 1
           <Footer>
           <ItemListContainer greeting={"Hola"} />
           <Productos title={"producto 1"} price={0} isGreen={true} />
-          <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
+          {/* <ItemCount stock={stock} initial={initial} onAdd={onAdd} /> */}
           </Footer>
       </Navbar>
     </div>
