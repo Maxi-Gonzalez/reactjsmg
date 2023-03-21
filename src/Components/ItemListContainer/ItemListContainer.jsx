@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { products } from "../../productsMocks";
+import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
 
@@ -9,6 +10,7 @@ const ItemListContainer = () => {
   // const [contador, setContador]= useState(0)
   // const [userName, setUserName] = useState("")
 
+  //Se manjeara toda la logica y poco de html, y en el itemlist poca logica y mucho html, para tenerlo separado
 useEffect( ()=>{
   const productList = new Promise((resolve, reject)=>{
     resolve( products)
@@ -23,7 +25,7 @@ console.log(items)
 
   return (
     <div>
-      <h1>Estoy en itemlist</h1>
+      <ItemList items={items} />
     </div>
   );
 };
