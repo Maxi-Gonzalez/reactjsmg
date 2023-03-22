@@ -1,16 +1,21 @@
 import React from 'react'
+import Item from '../Item/Item'
 
 const ItemList = ({items}) => {
   return (
-    <div>
-        <h1>Aca el hijo</h1>
+    <div style={{        
+    display: "flex",
+    width: "100%",
+    minHeight: "100vh",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "20px",
+    padding: "20px 0"
+    } }>
         {
            items.map( (elemento)=>{
-                return <div key={elemento.id}>
-                    <img src={elemento.img} alt="" />
-                    <h2>elemento.title</h2>
-                    <h3>elemento.price</h3>
-                    </div>
+                return <Item key={elemento.id} elemento={elemento}/>
            })
         }
     </div>
