@@ -14,8 +14,8 @@ const ItemList = ({items}) => {
     padding: "20px 0"
     } }>
         {
-           items.map( (elemento)=>{
-                return <Item key={elemento.id} elemento={elemento}/>
+           items.map( (element)=>{
+                return <Item key={element.id} element={element}/>
            })
         }
     </div>

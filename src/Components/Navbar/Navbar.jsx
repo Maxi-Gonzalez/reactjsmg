@@ -1,20 +1,23 @@
 import CartWidget from "../CartWidget/CartWidget";
 /*import "./Navbar.css" forma de importar el css */
 import styles from "./Navbar.module.css"
+import {Link} from "react-router-dom"
 
 const Navbar = ({children}) => {
+    let numero =12;
 return(
     <div>
     <div className={styles.containerNavbar}>   
+        <Link to="/">
         <img src="https://res.cloudinary.com/duhogrmi9/image/upload/v1677364996/logofinal_pfb3cn.png" />
-        
+        </Link>
+
         <ul className={styles.containerList}>
-            <li>Remeras</li>
-            <li>Rinoneras</li>
-            <li>Camperas</li>
+            <Link to="/" className={styles.navbarItem}>Todas </Link>
+            <Link to="/category/urbanas" className={styles.navbarItem}>Urbanas </Link>
+            <Link to="/category/deportivas" className={styles.navbarItem}>Deportivas </Link>
         </ul>
-        <CartWidget />
-        <h3 className="carrito" style={{padding: "10px"}}>Carrrito</h3>
+        <CartWidget numero={numero} />
 
     </div>
     {children}

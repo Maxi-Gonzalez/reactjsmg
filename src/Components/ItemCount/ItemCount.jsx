@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial=1, onAdd }) => {
   const [contador, setContador] = useState( initial);
 
   const sumar = () => {
@@ -18,7 +18,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
   return (
     <div>
-        <h1>Estoy en el item count</h1>
         <h2>{contador}</h2>
         <button onClick={sumar}>Sumar</button>
         <button onClick={restar}>Restar</button>

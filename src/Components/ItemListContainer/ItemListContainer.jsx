@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { products } from "../../productsMocks";
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
 
+  const {categoryName}=  useParams();
+
   const [items, setItems ]= useState([])
 
-  // const [nombre, setNombre] =useState("pepito")
-  // const [contador, setContador]= useState(0)
-  // const [userName, setUserName] = useState("")
+  const productosFiltrados = products.filter((elemento) => elemento.category === categoryName)
 
-  //Se manjeara toda la logica y poco de html, y en el itemlist poca logica y mucho html, para tenerlo separado
 useEffect( ()=>{
   const productList = new Promise((resolve, reject)=>{
-    resolve( products)
+    resolve( categoryName ? productosFiltrados :products)
   })
 
   productList
   .then((res)=>{setItems(res)})
   .catch((e)=>{console.log(e)})
-},[])
+},[categoryName])
 
 console.log(items)
 

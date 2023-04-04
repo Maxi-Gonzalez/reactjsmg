@@ -11,25 +11,28 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
 
-const Item = ({ elemento }) => {
+const Item = ({ element }) => {
   return (    
   <Card sx={{ maxWidth: 345 }}>
     <CardMedia
       component="img"
       alt="green iguana"
       height="140"
-      image={elemento.img}
+      image={element.img}
     />
     <CardContent>
       <Typography gutterBottom variant="h5" component="div">
-        {elemento.title}
+        {element.title}
       </Typography>
       <Typography variant="body2" color="text.secondary">
-       {elemento.description}
+       {element.description}
       </Typography>
     </CardContent>
     <CardActions>
+
+      <Link to={`/itemDetail/${element.id}`}>
       <Button size="small">Ver detalle</Button>
+      </Link>
 
     </CardActions>
   </Card>
