@@ -4,24 +4,29 @@ import { products } from "../../productsMocks";
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
+  const { categoryName } = useParams();
 
-  const {categoryName}=  useParams();
+  const [items, setItems] = useState([]);
 
-  const [items, setItems ]= useState([])
+  const productosFiltrados = products.filter(
+    (elemento) => elemento.category === categoryName
+  );
 
-  const productosFiltrados = products.filter((elemento) => elemento.category === categoryName)
+  useEffect(() => {
+    const productList = new Promise((resolve, reject) => {
+      resolve(categoryName ? productosFiltrados : products);
+    });
 
-useEffect( ()=>{
-  const productList = new Promise((resolve, reject)=>{
-    resolve( categoryName ? productosFiltrados :products)
-  })
+    productList
+      .then((res) => {
+        setItems(res);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [categoryName]);
 
-  productList
-  .then((res)=>{setItems(res)})
-  .catch((e)=>{console.log(e)})
-},[categoryName])
-
-console.log(items)
+  console.log(items);
 
   return (
     <div>
