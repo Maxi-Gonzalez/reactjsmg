@@ -8,6 +8,8 @@ export const products =[
 
         price: 15000,
 
+        quantity: 5,
+
         description: "Estas son las mejores zapatillas",
 
         category: "deportivas",
@@ -24,7 +26,7 @@ export const products =[
 
         price: 14500,
 
-        stock: 5,
+        quantity: 5,
 
         description: "Ultra livianas y cuentan con camara de aire",
 
@@ -42,7 +44,7 @@ export const products =[
 
         price: 19000,
 
-        stock: 5,
+        quantity: 5,
 
         description: "Las clasicas zapatillas que van para cualquier momento del dia",
 
@@ -60,7 +62,7 @@ export const products =[
 
         price: 17800,
 
-        stock: 5,
+        quantity: 5,
 
         description: "Zapatillas de ultima generacion para el deporte",
 
